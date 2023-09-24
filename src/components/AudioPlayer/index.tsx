@@ -59,12 +59,15 @@ const AudioPlayer = () => {
   }
 
   return (
-    <div className="p-4 w-11/12 left-0 right-0 m-auto rounded-2xl items-center justify-between flex h-1/6 fixed bottom-5 bg-black-rgba">
+    <div
+      style={{ transform: 'translateX(15%)' }}
+      className="p-4 w-3/5 left-0 right-0 m-auto rounded-2xl items-center justify-between flex h-1/6 fixed bottom-5 bg-black-rgba"
+    >
       <div className="h-full items-center w-1/3 flex gap-2">
         <img className="h-full rounded-2xl" src={currentTrack?.album?.cover} />
         <div className="flex flex-col">
-          <b>{currentTrack?.title}</b>
-          <span className="font-thin">{currentTrack?.artist.name}</span>
+          <b className="text-2xl">{currentTrack?.title}</b>
+          <span className="font-thin text-xl">{currentTrack?.artist.name}</span>
         </div>
       </div>
       <div className="h-1/3 justify-center items-center w-1/3 gap-6 flex">
