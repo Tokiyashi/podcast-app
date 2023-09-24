@@ -20,7 +20,7 @@ export default async function Home() {
 
   return (
     <main>
-      <div className="flex flex-col gap-2">
+      <div className="flex pb-60 justify-center items-center flex-col gap-2">
         {items.data.map((item) => (
           <MusicItem item={item} />
         ))}

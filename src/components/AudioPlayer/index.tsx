@@ -1,7 +1,11 @@
 'use client'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { FaBackward, FaForward, FaPause } from 'react-icons/fa'
+import { FaCirclePlay } from 'react-icons/fa6'
+import { BsRepeat } from 'react-icons/bs'
+import { PiShuffleBold } from 'react-icons/pi'
 
 const AudioPlayer = () => {
   const { currentTrack, audioSrc } = useSelector(
@@ -25,16 +29,58 @@ const AudioPlayer = () => {
     setPaused(!paused)
   }
 
+  const playerButtons = [
+    {
+      icon: PiShuffleBold,
+      action: () => {},
+    },
+    {
+      icon: FaBackward,
+      action: () => {},
+    },
+    {
+      icon: paused ? FaCirclePlay : FaPause,
+      action: handlePause,
+    },
+    {
+      action: () => {},
+      icon: FaForward,
+    },
+    {
+      action: () => {},
+      icon: BsRepeat,
+    },
+  ]
+
+  console.log(currentTrack)
+
+  if (!currentTrack) {
+    return <></>
+  }
+
   return (
-    <div className="p-6 w-full flex-col items-center justify-items-start flex h-1/6 fixed bottom-1 opacity-50 bg-black">
-      <div className="h-5 flex">
-        <b>{currentTrack?.title}</b>
+    <div className="p-4 w-11/12 left-0 right-0 m-auto rounded-2xl items-center justify-between flex h-1/6 fixed bottom-5 bg-black-rgba">
+      <div className="h-full items-center w-1/3 flex gap-2">
+        <img className="h-full rounded-2xl" src={currentTrack?.album?.cover} />
+        <div className="flex flex-col">
+          <b>{currentTrack?.title}</b>
+          <span className="font-thin">{currentTrack?.artist.name}</span>
+        </div>
       </div>
-      {paused ? (
-        <button onClick={handlePause}>play</button>
-      ) : (
-        <button onClick={handlePause}>pause</button>
-      )}
+      <div className="h-1/3 justify-center items-center w-1/3 gap-6 flex">
+        {playerButtons.map((item) => (
+          <button
+            key={item.icon}
+            onClick={item.action}
+            className="w-full h-full"
+          >
+            {<item.icon className="w-full h-full" />}
+          </button>
+        ))}
+      </div>
+      <div className="h-full justify-center items-center w-1/3 flex">
+        like and volume
+      </div>
     </div>
   )
 }
