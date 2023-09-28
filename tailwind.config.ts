@@ -13,6 +13,7 @@ const config: Config = {
         'black-rgba': 'rgba(0, 0, 0, 0.3)',
         'card-bg': '#24242C',
         main: '#41E1EA',
+        'dark-main': '#253C46',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

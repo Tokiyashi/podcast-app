@@ -12,7 +12,6 @@ type Props = {
 
 const MusicItem = ({ item }: Props) => {
   const play = () => store.dispatch(setCurrentTrack(item))
-  console.log(item)
 
   return (
     <div className="gap-2 p-3 max-h-20 hover:border-2 hover:border-main rounded-lg justify-between w-1/3 bg-card-bg flex align-bottom">
