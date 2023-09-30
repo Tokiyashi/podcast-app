@@ -1,6 +1,6 @@
-import MusicItem from '@/app/MusicItem'
 import React from 'react'
 import { Track } from '@/common/types/musicItem'
+import MusicList from '@/components/MusicList'
 
 const getTracks = async () => {
   const res = await fetch(
@@ -18,13 +18,7 @@ const getTracks = async () => {
 const BrowseMusicPage = async () => {
   const items: { data: Track[] } = await getTracks()
 
-  return (
-    <div className="w-full overflow-auto flex pb-60 justify-start items-center flex-col gap-2">
-      {items.data.map((item) => (
-        <MusicItem key={item.id} item={item} />
-      ))}
-    </div>
-  )
+  return <MusicList items={items.data} />
 }
 
 export default BrowseMusicPage

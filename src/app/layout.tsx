@@ -2,9 +2,9 @@ import Header from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Comfortaa } from 'next/font/google'
-import StoreProvider from '@/store/storeProvider'
 import AudioPlayer from '@/components/AudioPlayer'
 import Sidebar from '@/components/Sidebar'
+import CombinedProvider from '@/components/CombinedProvider'
 
 const scada = Comfortaa({
   subsets: ['cyrillic', 'latin'],
@@ -24,10 +24,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <StoreProvider>
-      <html lang="en">
-        <body className={scada.className}>
-          <div className="w-full h-screen flex">
+    <html lang="en">
+      <body className={scada.className}>
+        <CombinedProvider>
+          <div className="dark w-full h-screen flex">
             <Sidebar />
             <div className="flex w-5/6 max-h-screen overflow-auto relative flex-col">
               <Header />
@@ -35,8 +35,8 @@ export default function RootLayout({
               <AudioPlayer />
             </div>
           </div>
-        </body>
-      </html>
-    </StoreProvider>
+        </CombinedProvider>
+      </body>
+    </html>
   )
 }

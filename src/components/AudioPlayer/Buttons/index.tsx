@@ -4,7 +4,9 @@ import { FaBackward, FaForward, FaPause } from 'react-icons/fa'
 import { FaCirclePlay } from 'react-icons/fa6'
 import { BsRepeat } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
-import { RootState } from '@/store'
+import { RootState, store } from '@/store'
+import { setCurrentTrack } from '@/store/slices/playerSlice'
+import { goToNextTrack } from '@/utils/playerActions/goToNextTrack'
 
 type Props = {
   audioRef: RefObject<HTMLAudioElement>
@@ -12,7 +14,9 @@ type Props = {
 
 const Buttons = ({ audioRef }: Props) => {
   const [paused, setPaused] = useState(false)
-  const { audioSrc } = useSelector((state: RootState) => state.player)
+  const { audioSrc, currentTrack } = useSelector(
+    (state: RootState) => state.player
+  )
 
   function handlePause() {
     if (!audioRef.current) {
@@ -21,11 +25,23 @@ const Buttons = ({ audioRef }: Props) => {
 
     setPaused(!paused)
     audioRef.current[paused ? 'play' : 'pause']()
+    store.dispatch(setCurrentTrack({ ...currentTrack, paused: !paused }))
+  }
+
+  function handleFinishTrack() {
+    goToNextTrack()
   }
 
   useEffect(() => {
     setPaused(false)
   }, [audioSrc])
+
+  useEffect(() => {
+    if (!audioRef.current) {
+      return
+    }
+    setPaused(!!currentTrack?.paused)
+  }, [currentTrack?.paused])
 
   const playerButtons = [
     {
@@ -41,7 +57,7 @@ const Buttons = ({ audioRef }: Props) => {
       action: handlePause,
     },
     {
-      action: () => {},
+      action: handleFinishTrack,
       icon: FaForward,
     },
     {

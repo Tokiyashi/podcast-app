@@ -9,4 +9,5 @@ export type Track = {
   artist: {
     name: string
   }
+  paused?: boolean
 }
