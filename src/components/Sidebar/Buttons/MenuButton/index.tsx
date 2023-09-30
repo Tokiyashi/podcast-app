@@ -1,8 +1,17 @@
-const MenuButton = () => {
+import Link from 'next/link'
+
+type Props = {
+  item: { label: string; href: string }
+}
+const MenuButton = ({ item }: Props) => {
+  const { label, href } = item
+
   return (
-    <div className="w-full h-min flex hover:bg-dark-main rounded-2xl p-6">
-      <span className="">Home</span>
-    </div>
+    <Link href={href}>
+      <div className="w-full h-min flex hover:bg-dark-main rounded-2xl p-6">
+        <span className="">{label}</span>
+      </div>
+    </Link>
   )
 }
 
