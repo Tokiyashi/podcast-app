@@ -1,4 +1,5 @@
 import MenuButton from './MenuButton';
+import React from 'react';
 
 const menuItems = {
   Menu: [

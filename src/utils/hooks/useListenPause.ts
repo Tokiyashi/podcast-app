@@ -3,9 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 
 export function useListenPause(audioRef: RefObject<HTMLAudioElement>) {
-  const { currentTrack, audioSrc } = useSelector(
-    (state: RootState) => state.player
-  );
+  const { currentTrack } = useSelector((state: RootState) => state.player);
   useEffect(() => {
     if (!audioRef.current) {
       return;

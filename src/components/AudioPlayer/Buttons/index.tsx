@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react';
+import React, { RefObject, useEffect, useState } from 'react';
 import { PiShuffleBold } from 'react-icons/pi';
 import { FaBackward, FaForward, FaPause } from 'react-icons/fa';
 import { FaCirclePlay } from 'react-icons/fa6';
@@ -89,4 +89,4 @@ const Buttons = ({ audioRef }: Props) => {
   );
 };
 
-export default Buttons;
+export default Buttons

@@ -1,10 +1,12 @@
-import React from 'react'
-import Link from 'next/link'
+'use client';
 
-export default async function Home() {
+import React from 'react';
+import Link from 'next/link';
+
+export default function Home() {
   return (
-    <div>
+    <main>
       <Link href="/browse">Start browsing music!</Link>
-    </div>
-  )
+    </main>
+  );
 }

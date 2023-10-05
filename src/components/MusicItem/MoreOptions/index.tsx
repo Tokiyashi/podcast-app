@@ -10,6 +10,7 @@ import {
 import { store } from '@/store';
 import { addNewTrack } from '@/store/slices/trackListSlice';
 import { Track } from '@/common/types/musicItem';
+import React from 'react';
 
 type Props = {
   item: Track;

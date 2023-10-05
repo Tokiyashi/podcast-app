@@ -45,12 +45,9 @@ const AudioPlayer = () => {
       />
       <TrackInfo currentTrack={currentTrack} />
       <Buttons audioRef={audioRef} />
-      <Volume
-        value={Number(audioRef.current?.volume || 0)}
-        onChange={handleVolumeChange}
-      />
+      <Volume onChange={handleVolumeChange} />
     </div>
   );
 };
 
-export default AudioPlayer;
+export default AudioPlayer

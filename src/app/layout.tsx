@@ -1,10 +1,11 @@
-import Header from '@/components/Header';
 import './globals.css';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Comfortaa } from 'next/font/google';
-import AudioPlayer from '@/components/AudioPlayer';
+import React from 'react';
 import Sidebar from '@/components/Sidebar';
 import CombinedProvider from '@/components/CombinedProvider';
+import Header from '@/components/Header';
+import AudioPlayer from '@/components/AudioPlayer';
 
 const scada = Comfortaa({
   subsets: ['cyrillic', 'latin'],
@@ -15,7 +16,7 @@ const scada = Comfortaa({
 });
 export const metadata: Metadata = {
   title: 'Tune Town',
-  description: 'Your friends and music ath the same time!',
+  description: 'Your friends and music at the same time!',
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <body className={scada.className}>
         <CombinedProvider>
           <div className="dark w-full h-screen flex">

@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { wrapNumberInput } from '@/utils/inputWrappers';
 import { FaVolumeHigh, FaVolumeLow, FaVolumeXmark } from 'react-icons/fa6';
 import { VolumeTypes } from '@/common/enums/volumeTypes';
 import { Input } from '@nextui-org/input';
 
 type Props = {
-  value: number;
   onChange: (value: number) => void;
 };
 
@@ -15,7 +14,7 @@ const volumeIcon = new Map([
   [VolumeTypes.High, FaVolumeHigh],
 ]);
 
-const Volume = ({ value, onChange }: Props) => {
+const Volume = ({ onChange }: Props) => {
   const [currentValue, setCurrentValue] = useState(
     Number(localStorage.getItem('volume') || 50)
   );

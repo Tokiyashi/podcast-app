@@ -3,6 +3,7 @@ import { Button } from '@nextui-org/react';
 import { backendUrl } from '@/common/constants/url';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import React from 'react';
 
 const Room = () => {
   const router = useRouter();
@@ -56,4 +57,4 @@ const Room = () => {
   );
 };
 
-export default Room;
+export default Room
