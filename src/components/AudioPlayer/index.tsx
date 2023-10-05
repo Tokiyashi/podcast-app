@@ -1,37 +1,37 @@
-'use client'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/store'
-import React, { useRef } from 'react'
-import Volume from '@/components/AudioPlayer/Volume'
-import TrackInfo from '@/components/AudioPlayer/TrackInfo'
-import Buttons from './Buttons'
-import { useListenPause } from '@/utils/hooks/useListenPause'
-import { goToNextTrack } from '@/utils/playerActions/goToNextTrack'
+'use client';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import React, { useRef } from 'react';
+import Volume from '@/components/AudioPlayer/Volume';
+import TrackInfo from '@/components/AudioPlayer/TrackInfo';
+import Buttons from './Buttons';
+import { useListenPause } from '@/utils/hooks/useListenPause';
+import { goToNextTrack } from '@/utils/playerActions/goToNextTrack';
 
 const AudioPlayer = () => {
   const { currentTrack, audioSrc } = useSelector(
     (state: RootState) => state.player
-  )
+  );
 
-  const audioRef = useRef<HTMLAudioElement>(null)
-  useListenPause(audioRef)
+  const audioRef = useRef<HTMLAudioElement>(null);
+  useListenPause(audioRef);
 
   function handleVolumeChange(volume: number) {
     if (!audioRef.current) {
-      return
+      return;
     }
-    audioRef.current.volume = volume
+    audioRef.current.volume = volume;
   }
 
   function handleEnded() {
     if (!audioRef.current) {
-      return
+      return;
     }
-    goToNextTrack()
+    goToNextTrack();
   }
 
   if (!currentTrack) {
-    return <></>
+    return <></>;
   }
 
   return (
@@ -50,7 +50,7 @@ const AudioPlayer = () => {
         onChange={handleVolumeChange}
       />
     </div>
-  )
-}
+  );
+};
 
-export default AudioPlayer
+export default AudioPlayer;

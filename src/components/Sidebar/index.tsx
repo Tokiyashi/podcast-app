@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import Buttons from './Buttons'
-import React from 'react'
+import Buttons from './Buttons';
+import React from 'react';
 
 const Sidebar = () => {
   return (
@@ -10,7 +10,7 @@ const Sidebar = () => {
       <Buttons />
       {/*<MusicList items={queue} />*/}
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import React from 'react'
-import StoreProvider from '@/store/storeProvider'
-import { ThemeProvider } from 'next-themes'
-import { NextUIProvider } from '@nextui-org/system'
+import React from 'react';
+import StoreProvider from '@/store/storeProvider';
+import { ThemeProvider } from 'next-themes';
+import { NextUIProvider } from '@nextui-org/system';
 
 const CombinedProvider = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -12,7 +12,7 @@ const CombinedProvider = ({ children }: { children: React.ReactNode }) => {
         <NextUIProvider>{children}</NextUIProvider>
       </ThemeProvider>
     </StoreProvider>
-  )
-}
+  );
+};
 
-export default CombinedProvider
+export default CombinedProvider;

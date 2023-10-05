@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['standard-with-typescript', 'plugin:react/recommended', 'prettier'],
+  extends: ['prettier', 'next'],
   overrides: [
     {
       env: {
@@ -19,6 +19,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
-  rules: {},
-}
+  plugins: [],
+  rules: {
+    '@typescript-eslint/consistent-type-definitions': ['off'],
+    '@typescript-eslint/consistent-type-imports': ['off'],
+    '@typescript-eslint/explicit-function-return-type': [
+      'off',
+      { allowExpressions: true },
+    ],
+    '@typescript-eslint/strict-boolean-expressions': ['off'],
+  },
+};

@@ -1,15 +1,15 @@
-'use client'
-import { createSlice } from '@reduxjs/toolkit'
-import { Room } from '@/common/types/room'
-import { DEFAULT_ROOM } from '@/common/constants/defaultRoom'
+'use client';
+import { createSlice } from '@reduxjs/toolkit';
+import { Room } from '@/common/types/room';
+import { DEFAULT_ROOM } from '@/common/constants/defaultRoom';
 
 export type RoomState = {
-  room: Room
-}
+  room: Room;
+};
 
 const initialState: RoomState = {
   room: DEFAULT_ROOM,
-}
+};
 
 export const roomSlice = createSlice({
   name: 'trackList',
@@ -25,13 +25,13 @@ export const roomSlice = createSlice({
     //   state.queue.shift()
     // },
     setRoom: (state, action) => {
-      state.room = action.payload
+      state.room = action.payload;
     },
     // setCurrentTrack: (state, action) => {
     //   state.currentTrack = action.payload
     // },
   },
-})
+});
 
-export const { setRoom } = roomSlice.actions
-export default roomSlice.reducer
+export const { setRoom } = roomSlice.actions;
+export default roomSlice.reducer;

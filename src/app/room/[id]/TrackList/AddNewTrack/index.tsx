@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { Button } from '@nextui-org/react'
-import axios from 'axios'
-import { backendUrl } from '@/common/constants/url'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/store'
-import { Input } from '@nextui-org/input'
-import { wrapTextInput } from '@/utils/inputWrappers'
+import React, { useState } from 'react';
+import { Button } from '@nextui-org/react';
+import axios from 'axios';
+import { backendUrl } from '@/common/constants/url';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import { Input } from '@nextui-org/input';
+import { wrapTextInput } from '@/utils/inputWrappers';
 
 const AddNewTrack = () => {
-  const { room } = useSelector((state: RootState) => state.room)
-  const [search, setSearch] = useState('')
+  const { room } = useSelector((state: RootState) => state.room);
+  const [search, setSearch] = useState('');
 
   async function handleAddTrack() {
     const res = await fetch(
@@ -21,13 +21,13 @@ const AddNewTrack = () => {
           'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com',
         },
       }
-    )
-    const newtrack = await res.json()
+    );
+    const newtrack = await res.json();
 
     await axios.put(backendUrl + '/rooms', {
       ...room,
       allTracks: [{ url: newtrack.data[0].preview }],
-    })
+    });
   }
 
   return (
@@ -35,7 +35,7 @@ const AddNewTrack = () => {
       <Input value={search} onChange={wrapTextInput(setSearch)} />
       <Button onClick={handleAddTrack}>Add new track</Button>
     </>
-  )
-}
+  );
+};
 
-export default AddNewTrack
+export default AddNewTrack;

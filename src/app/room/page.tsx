@@ -1,18 +1,18 @@
-'use client'
-import { Button } from '@nextui-org/react'
-import { backendUrl } from '@/common/constants/url'
-import axios from 'axios'
-import { useRouter } from 'next/navigation'
+'use client';
+import { Button } from '@nextui-org/react';
+import { backendUrl } from '@/common/constants/url';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const Room = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   async function handleCreateRoom() {
     const request = await axios.post(backendUrl + '/rooms', {
       name: 'Best Room',
-    })
-    const { _id } = request.data
-    router.push(`/room/${_id}`)
+    });
+    const { _id } = request.data;
+    router.push(`/room/${_id}`);
   }
 
   // const test = () => {
@@ -53,7 +53,7 @@ const Room = () => {
         </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Room
+export default Room;

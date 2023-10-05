@@ -1,10 +1,10 @@
-import Header from '@/components/Header'
-import './globals.css'
-import type { Metadata } from 'next'
-import { Comfortaa } from 'next/font/google'
-import AudioPlayer from '@/components/AudioPlayer'
-import Sidebar from '@/components/Sidebar'
-import CombinedProvider from '@/components/CombinedProvider'
+import Header from '@/components/Header';
+import './globals.css';
+import type { Metadata } from 'next';
+import { Comfortaa } from 'next/font/google';
+import AudioPlayer from '@/components/AudioPlayer';
+import Sidebar from '@/components/Sidebar';
+import CombinedProvider from '@/components/CombinedProvider';
 
 const scada = Comfortaa({
   subsets: ['cyrillic', 'latin'],
@@ -12,16 +12,16 @@ const scada = Comfortaa({
   variable: '--font-scada',
   display: 'swap',
   style: ['normal'],
-})
+});
 export const metadata: Metadata = {
   title: 'Tune Town',
   description: 'Your friends and music ath the same time!',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -40,5 +40,5 @@ export default function RootLayout({
         </CombinedProvider>
       </body>
     </html>
-  )
+  );
 }

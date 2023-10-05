@@ -1,11 +1,11 @@
-import React from 'react'
-import { Track } from '@/common/types/musicItem'
-import { Image } from '@nextui-org/react'
-import { responsiveText } from '@/utils/mixins/responsiveText'
+import React from 'react';
+import { Track } from '@/common/types/musicItem';
+import { Image } from '@nextui-org/react';
+import { responsiveText } from '@/utils/mixins/responsiveText';
 
 type Props = {
-  currentTrack: Track
-}
+  currentTrack: Track;
+};
 const TrackInfo = ({ currentTrack }: Props) => {
   return (
     <div className="h-full items-center w-full md:w-1/3 flex gap-2">
@@ -22,7 +22,7 @@ const TrackInfo = ({ currentTrack }: Props) => {
         </span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TrackInfo
+export default TrackInfo;

@@ -1,4 +1,4 @@
-import { Room } from '@/common/types/room'
+import { Room } from '@/common/types/room';
 
 export const DEFAULT_ROOM: Room = {
   id: '',
@@ -6,4 +6,4 @@ export const DEFAULT_ROOM: Room = {
   allTracks: [],
   currentTrack: null,
   queue: [],
-}
+};

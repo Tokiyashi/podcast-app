@@ -1,21 +1,24 @@
-'use client'
-import { Track } from '@/common/types/musicItem'
-import { RootState, store } from '@/store'
-import { setCurrentTrack } from '@/store/slices/playerSlice'
-import { useSelector } from 'react-redux'
-import MoreOptions from './MoreOptions'
-import PlayPause from '@/components/MusicItem/PlayPause'
+'use client';
+import { type Track } from '@/common/types/musicItem';
+import { type RootState, store } from '@/store';
+import { setCurrentTrack } from '@/store/slices/playerSlice';
+import { useSelector } from 'react-redux';
+import MoreOptions from './MoreOptions';
+import PlayPause from '@/components/MusicItem/PlayPause';
+import React from 'react';
 
 type Props = {
-  item: Track
-}
+  item: Track;
+};
 
 const MusicItem = ({ item }: Props) => {
-  const play = () => store.dispatch(setCurrentTrack({ ...item, paused: false }))
-  const pause = () => store.dispatch(setCurrentTrack({ ...item, paused: true }))
-  const { currentTrack } = useSelector((state: RootState) => state.player)
+  const play = () =>
+    store.dispatch(setCurrentTrack({ ...item, paused: false }));
+  const pause = () =>
+    store.dispatch(setCurrentTrack({ ...item, paused: true }));
+  const { currentTrack } = useSelector((state: RootState) => state.player);
 
-  const isPausedTrack = !!currentTrack?.paused
+  const isPausedTrack = !!currentTrack?.paused;
 
   return (
     <div className="gap-2 p-3 max-h-20 hover:border-2 hover:border-main rounded-lg justify-between w-full bg-card-bg flex align-bottom">
@@ -40,7 +43,7 @@ const MusicItem = ({ item }: Props) => {
       </div>
       <MoreOptions item={item} />
     </div>
-  )
-}
+  );
+};
 
-export default MusicItem
+export default MusicItem;
