@@ -1,22 +1,22 @@
-'use client'
+'use client';
 
-import { FiMoreVertical } from 'react-icons/fi'
+import { FiMoreVertical } from 'react-icons/fi';
 import {
   Button,
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@nextui-org/react'
-import { store } from '@/store'
-import { addNewTrack } from '@/store/slices/trackListSlice'
-import { Track } from '@/common/types/musicItem'
+} from '@nextui-org/react';
+import { store } from '@/store';
+import { addNewTrack } from '@/store/slices/trackListSlice';
+import { Track } from '@/common/types/musicItem';
 
 type Props = {
-  item: Track
-}
+  item: Track;
+};
 
 const MoreOptions = ({ item }: Props) => {
-  const addInQueue = () => store.dispatch(addNewTrack(item))
+  const addInQueue = () => store.dispatch(addNewTrack(item));
 
   return (
     <div className="min-h-full flex w-1/12">
@@ -37,7 +37,7 @@ const MoreOptions = ({ item }: Props) => {
         </PopoverContent>
       </Popover>
     </div>
-  )
-}
+  );
+};
 
-export default MoreOptions
+export default MoreOptions;

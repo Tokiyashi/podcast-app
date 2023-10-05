@@ -1,5 +1,5 @@
 const NewRoom = () => {
-  return <div></div>
-}
+  return <div></div>;
+};
 
-export default NewRoom
+export default NewRoom;

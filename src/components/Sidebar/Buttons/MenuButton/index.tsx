@@ -1,10 +1,10 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 type Props = {
-  item: { label: string; href: string }
-}
+  item: { label: string; href: string };
+};
 const MenuButton = ({ item }: Props) => {
-  const { label, href } = item
+  const { label, href } = item;
 
   return (
     <Link href={href}>
@@ -12,7 +12,7 @@ const MenuButton = ({ item }: Props) => {
         <span className="">{label}</span>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default MenuButton
+export default MenuButton;
