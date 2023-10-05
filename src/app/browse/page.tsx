@@ -18,7 +18,11 @@ const getTracks = async () => {
 const BrowseMusicPage = async () => {
   const items: { data: Track[] } = await getTracks()
 
-  return <MusicList items={items.data} />
+  return (
+    <div className="w-full p-6">
+      <MusicList items={items.data} />
+    </div>
+  )
 }
 
 export default BrowseMusicPage

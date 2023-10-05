@@ -1,9 +1,6 @@
 'use client'
 import { Track } from '@/common/types/musicItem'
 import { createSlice } from '@reduxjs/toolkit'
-import { AppDispatch, RootState } from '@/store'
-
-type Creator = { getState: () => RootState; dispatch: AppDispatch }
 
 export type TrackListState = {
   queue: Track[]

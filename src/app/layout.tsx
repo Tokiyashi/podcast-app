@@ -31,7 +31,9 @@ export default function RootLayout({
             <Sidebar />
             <div className="flex w-5/6 max-h-screen overflow-auto relative flex-col">
               <Header />
-              {children}
+              <main className="flex w-full flex-col min-h-full  h-min p-5">
+                {children}
+              </main>
               <AudioPlayer />
             </div>
           </div>

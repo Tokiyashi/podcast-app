@@ -7,8 +7,8 @@ const menuItems = {
       href: '/menu',
     },
     {
-      label: 'Search',
-      href: '/search',
+      label: 'Listen Together!',
+      href: '/room',
     },
   ],
   Collection: [
@@ -28,7 +28,7 @@ const menuItems = {
     },
     {
       label: 'Settings',
-      href: '/settings',
+      href: '/set',
     },
   ],
 }
@@ -39,14 +39,14 @@ const Buttons = () => {
       {Object.entries(menuItems).map((item) => {
         const [menuTitle, menuButtons] = item
         return (
-          <>
+          <div className="flex flex-col gap-4" key={menuTitle}>
             <div>{menuTitle}</div>
             <div>
               {menuButtons.map((button) => (
-                <MenuButton item={button} />
+                <MenuButton key={button.href} item={button} />
               ))}
             </div>
-          </>
+          </div>
         )
       })}
     </div>

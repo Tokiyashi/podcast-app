@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux'
 import { RootState, store } from '@/store'
 import { setCurrentTrack } from '@/store/slices/playerSlice'
 import { goToNextTrack } from '@/utils/playerActions/goToNextTrack'
+import { Button } from '@nextui-org/react'
+import Timeline from './Timeline'
 
 type Props = {
   audioRef: RefObject<HTMLAudioElement>
@@ -67,12 +69,22 @@ const Buttons = ({ audioRef }: Props) => {
   ]
 
   return (
-    <div className="h-1/3 justify-center items-center w-1/3 gap-6 flex">
-      {playerButtons.map((item) => (
-        <button key={item.icon} onClick={item.action} className="w-full h-full">
-          {<item.icon className="w-full h-full" />}
-        </button>
-      ))}
+    <div className="h-full justify-between flex-col items-center w-full md:w-1/3 flex">
+      <div className="flex justify-between m-auto h-1/3 overflow-hidden w-5/6">
+        {playerButtons.map((item) => (
+          <Button
+            isIconOnly
+            key={item.icon}
+            className="p-1 h-full w-1/4 "
+            radius="full"
+            variant="light"
+            onClick={item.action}
+          >
+            {<item.icon className="w-full h-full" />}
+          </Button>
+        ))}
+      </div>
+      <Timeline audioRef={audioRef} />
     </div>
   )
 }

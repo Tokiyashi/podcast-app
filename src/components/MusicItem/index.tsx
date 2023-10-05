@@ -18,7 +18,7 @@ const MusicItem = ({ item }: Props) => {
   const isPausedTrack = !!currentTrack?.paused
 
   return (
-    <div className="gap-2 p-3 max-h-20 hover:border-2 hover:border-main rounded-lg justify-between w-1/3 bg-card-bg flex align-bottom">
+    <div className="gap-2 p-3 max-h-20 hover:border-2 hover:border-main rounded-lg justify-between w-full bg-card-bg flex align-bottom">
       <div className="flex gap-2 max-w-full overflow-hidden">
         <img
           alt="preview"
