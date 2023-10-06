@@ -1,15 +1,17 @@
 import React from 'react';
-import { Track } from '@/common/types/musicItem';
-import MusicItem from '@/components/MusicItem';
+import { UploadedTrack } from '@/common/types/musicItem';
+import UploadedMusicItem from '@/components/UploadedMusicItem';
 
 type Props = {
-  items: Track[];
+  items: UploadedTrack[];
 };
 
 const MusicList = ({ items }: Props) => {
   return (
-    <div className="w-full overflow-auto flex pb-60 justify-start items-center flex-col gap-2">
-      {items?.map(item => <MusicItem key={item.id} item={item} />)}
+    <div className="w-full border-main rounded-2xl p-2 border-1 overflow-auto h-min flex pb-60 justify-start items-center flex-col gap-2">
+      {items?.map((item, index) => (
+        <UploadedMusicItem key={index} item={item} />
+      ))}
     </div>
   );
 };

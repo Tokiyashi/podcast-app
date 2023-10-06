@@ -11,3 +11,11 @@ export type Track = {
   };
   paused?: boolean;
 };
+
+export type UploadedTrack = {
+  id: string;
+  title: string;
+  url: string;
+  duration: number;
+  artistName: string;
+};

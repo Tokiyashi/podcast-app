@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 import { PiShuffleBold } from 'react-icons/pi';
 import { FaBackward, FaForward, FaPause } from 'react-icons/fa';
 import { FaCirclePlay } from 'react-icons/fa6';
@@ -21,7 +21,7 @@ const Buttons = ({ audioRef }: Props) => {
   );
 
   function handlePause() {
-    if (!audioRef.current) {
+    if (!audioRef?.current) {
       return;
     }
 
@@ -39,7 +39,7 @@ const Buttons = ({ audioRef }: Props) => {
   }, [audioSrc]);
 
   useEffect(() => {
-    if (!audioRef.current) {
+    if (!audioRef?.current) {
       return;
     }
     setPaused(!!currentTrack?.paused);
@@ -89,4 +89,4 @@ const Buttons = ({ audioRef }: Props) => {
   );
 };
 
-export default Buttons
+export default Buttons;
