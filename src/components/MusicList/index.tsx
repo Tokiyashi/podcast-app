@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { UploadedTrack } from '@/common/types/musicItem';
 import UploadedMusicItem from '@/components/UploadedMusicItem';
 
 type Props = {
-  items: UploadedTrack[]
-}
+  items: UploadedTrack[];
+};
 
 const MusicList = ({ items }: Props) => {
   return (

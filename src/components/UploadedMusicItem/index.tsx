@@ -1,9 +1,9 @@
-import React from 'react'
-import { UploadedTrack } from '@/common/types/musicItem'
+import React from 'react';
+import { UploadedTrack } from '@/common/types/musicItem';
 
 type Props = {
-  item: UploadedTrack
-}
+  item: UploadedTrack;
+};
 
 const UploadedMusicItem = ({ item }: Props) => {
   return (
@@ -15,7 +15,7 @@ const UploadedMusicItem = ({ item }: Props) => {
         <span className="text-sm">{item?.artistName}</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UploadedMusicItem
+export default UploadedMusicItem;
