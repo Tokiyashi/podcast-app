@@ -1,11 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { type RootState } from '@/store';
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/store'
+import Controls from './Controls'
 
 const Player = () => {
-  const { room } = useSelector((state: RootState) => state.room);
+  const { room } = useSelector((state: RootState) => state.room)
 
-  return <div className="bg-red-500 h-2/3 w-2/3">{room.name}</div>;
-};
+  return (
+    <div className="items-center rounded-2xl bg-card-bg flex justify-center h-2/3 w-2/3">
+      {room.name}
+      <Controls />
+    </div>
+  )
+}
 
-export default Player;
+export default Player

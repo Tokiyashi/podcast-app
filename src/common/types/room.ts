@@ -1,9 +1,9 @@
-import { Track } from '@/common/types/musicItem';
+import { UploadedTrack } from '@/common/types/musicItem'
 
 export type Room = {
-  id: string;
-  name: string;
-  allTracks: Track[];
-  currentTrack: Track | null;
-  queue: Track[];
-};
+  id: string
+  name: string
+  allTracks: UploadedTrack[]
+  currentTrack: UploadedTrack | null
+  queue: UploadedTrack[]
+}
