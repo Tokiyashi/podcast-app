@@ -8,7 +8,7 @@ const TrackList = () => {
   const { room } = useSelector((state: RootState) => state.room);
 
   return (
-    <div className="flex h-full flex-col w-1/3">
+    <div className="flex gap-2 justify-start flex-col w-1/3">
       <MusicList items={room?.allTracks} />
       <AddNewTrack />
     </div>

@@ -10,7 +10,8 @@ const Player = () => {
   return (
     <div className="items-center rounded-2xl bg-card-bg flex flex-col justify-center h-2/3 w-2/3">
       <span>{room.name}</span>
-      <h2 className="text-2xl">{currentTrack?.title}</h2>
+      <h2 className="text-7xl">{currentTrack?.title}</h2>
+      <h3 className="text-5xl">{currentTrack?.artistName}</h3>
       <Controls />
     </div>
   );
