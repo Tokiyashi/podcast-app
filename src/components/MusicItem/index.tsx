@@ -16,8 +16,8 @@ const MusicItem = ({ item }: Props) => {
     store.dispatch(setCurrentTrack({ ...item, paused: false }));
   const pause = () =>
     store.dispatch(setCurrentTrack({ ...item, paused: true }));
-  const { currentTrack } = useSelector((state: RootState) => state.player);
 
+  const { currentTrack } = useSelector((state: RootState) => state.player);
   const isPausedTrack = !!currentTrack?.paused;
 
   return (

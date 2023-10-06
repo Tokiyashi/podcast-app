@@ -18,4 +18,6 @@ export type UploadedTrack = {
   url: string;
   duration: number;
   artistName: string;
+  paused?: boolean;
+  image: string;
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Track } from '@/common/types/musicItem';
+import { UploadedTrack } from '@/common/types/musicItem';
 import { Image } from '@nextui-org/react';
 import { responsiveText } from '@/utils/mixins/responsiveText';
 
 type Props = {
-  currentTrack: Track;
+  currentTrack: UploadedTrack;
 };
 const TrackInfo = ({ currentTrack }: Props) => {
   return (
@@ -13,12 +13,12 @@ const TrackInfo = ({ currentTrack }: Props) => {
         radius="lg"
         className="h-1/3 hidden md:block md:h-full"
         alt="Album Cover"
-        src={currentTrack?.album?.cover}
+        src={currentTrack?.image}
       />
       <div className="flex flex-col overflow-hidden">
         <b className={`text-2xl ${responsiveText}`}>{currentTrack?.title}</b>
         <span className={`font-thin text-xl ${responsiveText}`}>
-          {currentTrack?.artist.name}
+          {currentTrack?.artistName}
         </span>
       </div>
     </div>

@@ -1,8 +1,8 @@
-import { Track } from '@/common/types/musicItem';
+import { UploadedTrack } from '@/common/types/musicItem';
 import { createSlice } from '@reduxjs/toolkit';
 
 export type PlayerState = {
-  currentTrack: Track | null;
+  currentTrack: UploadedTrack | null;
   audioSrc: string;
 };
 
@@ -17,7 +17,7 @@ export const playerSlice = createSlice({
   reducers: {
     setCurrentTrack: (state, action) => {
       state.currentTrack = action.payload;
-      state.audioSrc = action.payload?.preview;
+      state.audioSrc = action.payload?.url;
     },
   },
 });
