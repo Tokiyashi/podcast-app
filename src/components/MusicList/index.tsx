@@ -8,7 +8,7 @@ type Props = {
 
 const MusicList = ({ items }: Props) => {
   return (
-    <div className="w-full border-main rounded-2xl p-2 border-1 overflow-auto h-min flex pb-60 justify-start items-center flex-col gap-2">
+    <div className="w-full rounded-2xl overflow-auto flex h-min justify-start items-center flex-col gap-2">
       {items?.map((item, index) => (
         <UploadedMusicItem key={index} item={item} />
       ))}

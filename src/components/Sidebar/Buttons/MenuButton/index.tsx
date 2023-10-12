@@ -1,10 +1,15 @@
+'use client';
 import Link from 'next/link';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 
 type Props = {
   item: { label: string; href: string };
 };
 const MenuButton = ({ item }: Props) => {
+  const { currentUser } = useSelector((state: RootState) => state.user);
+
   const { label, href } = item;
 
   return (

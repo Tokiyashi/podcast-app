@@ -1,9 +1,9 @@
 'use client';
-import { Track } from '@/common/types/musicItem';
+import { UploadedTrack } from '@/common/types/musicItem';
 import { createSlice } from '@reduxjs/toolkit';
 
 export type TrackListState = {
-  queue: Track[];
+  queue: UploadedTrack[];
 };
 
 const initialState: TrackListState = {

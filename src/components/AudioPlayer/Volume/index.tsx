@@ -39,7 +39,7 @@ const Volume = ({ onChange }: Props) => {
   }, []);
 
   return (
-    <div className="h-1/3 justify-center items-center overflow-hidden w-full md:w-1/3 gap-2 flex">
+    <div className="justify-center items-center overflow-hidden w-full h-1/5 gap-2 flex">
       <Icon className="h-full w-auto" />
       <Input
         className="accent-main w-1/2"

@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import playerReducer from '@/store/slices/playerSlice';
-import trackListReducer from '@/store/slices/trackListSlice';
-import roomReducer from '@/store/slices/roomSlice';
+import playerReducer from './slices/playerSlice';
+import trackListReducer from './slices/trackListSlice';
+import roomReducer from './slices/roomSlice';
+import userReducer from './slices/userSlice';
 
 export const store = configureStore({
   reducer: {
     player: playerReducer,
     trackList: trackListReducer,
     room: roomReducer,
+    user: userReducer,
   },
   devTools: true,
   middleware: getDefaultMiddleware => getDefaultMiddleware(),

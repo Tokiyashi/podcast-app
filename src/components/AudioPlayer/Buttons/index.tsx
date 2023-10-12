@@ -9,6 +9,7 @@ import { setCurrentTrack } from '@/store/slices/playerSlice';
 import { goToNextTrack } from '@/utils/playerActions/goToNextTrack';
 import { Button } from '@nextui-org/react';
 import Timeline from './Timeline';
+import Volume from '@/components/AudioPlayer/Volume';
 
 type Props = {
   audioRef: RefObject<HTMLAudioElement>;
@@ -28,6 +29,13 @@ const Buttons = ({ audioRef }: Props) => {
     setPaused(!paused);
     audioRef.current[paused ? 'play' : 'pause']();
     store.dispatch(setCurrentTrack({ ...currentTrack, paused: !paused }));
+  }
+
+  function handleVolumeChange(volume: number) {
+    if (!audioRef.current) {
+      return;
+    }
+    audioRef.current.volume = volume;
   }
 
   function handleFinishTrack() {
@@ -69,8 +77,9 @@ const Buttons = ({ audioRef }: Props) => {
   ];
 
   return (
-    <div className="h-full justify-between flex-col items-center w-full md:w-1/3 flex">
-      <div className="flex justify-between m-auto h-1/3 overflow-hidden w-5/6">
+    <div className="h-full bg-card-bg justify-between flex-col items-center w-full flex">
+      <Timeline audioRef={audioRef} />
+      <div className="flex justify-between h-1/3 overflow-hidden w-5/6">
         {playerButtons.map(item => (
           <Button
             isIconOnly
@@ -84,7 +93,7 @@ const Buttons = ({ audioRef }: Props) => {
           </Button>
         ))}
       </div>
-      <Timeline audioRef={audioRef} />
+      <Volume onChange={handleVolumeChange} />
     </div>
   );
 };
