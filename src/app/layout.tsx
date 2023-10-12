@@ -5,7 +5,6 @@ import React from 'react';
 import Sidebar from '@/components/Sidebar';
 import CombinedProvider from '@/components/CombinedProvider';
 import Header from '@/components/Header';
-import AudioPlayer from '@/components/AudioPlayer';
 
 const scada = Comfortaa({
   subsets: ['cyrillic', 'latin'],
@@ -35,7 +34,6 @@ export default function RootLayout({
               <main className="flex w-full flex-col min-h-full overflow-auto h-min p-5">
                 {children}
               </main>
-              <AudioPlayer />
             </div>
           </div>
         </CombinedProvider>

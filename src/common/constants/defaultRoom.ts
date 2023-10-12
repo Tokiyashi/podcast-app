@@ -5,5 +5,6 @@ export const DEFAULT_ROOM: Room = {
   name: '',
   allTracks: [],
   currentTrack: null,
-  queue: [],
+  trackQueue: [],
+  creatorId: '',
 };

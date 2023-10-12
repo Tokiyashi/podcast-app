@@ -5,6 +5,7 @@ import { RootState, store } from '@/store';
 import { setCurrentTrack } from '@/store/slices/playerSlice';
 import { useSelector } from 'react-redux';
 import { Image } from '@nextui-org/react';
+import MoreOptions from './MoreOptions';
 
 type Props = {
   item: UploadedTrack;
@@ -36,6 +37,7 @@ const UploadedMusicItem = ({ item }: Props) => {
           <span className="text-sm">{item?.artistName}</span>
         </div>
       </div>
+      <MoreOptions item={item} />
     </div>
   );
 };

@@ -2,12 +2,13 @@
 import { useParams } from 'next/navigation';
 import Player from './Player';
 import TrackList from './TrackList';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { backendUrl } from '@/common/constants/url';
 import axios from 'axios';
 import { store } from '@/store';
 import { setRoom } from '@/store/slices/roomSlice';
 import { io } from 'socket.io-client';
+import AllTracks from '@/app/room/[id]/AllTracks';
 
 const Page = () => {
   const { id } = useParams();
@@ -25,12 +26,10 @@ const Page = () => {
     const socket = io('http://localhost:9090');
 
     socket.on('connect', () => {
-      console.log('Подключено к серверу');
       socket.emit('join room', 'room1');
     });
 
     socket.on('update room', newValue => {
-      console.log('Получено сообщение:', newValue);
       if (!newValue) {
         return;
       }
@@ -44,12 +43,12 @@ const Page = () => {
   }, [id]);
 
   return (
-    <div className="h-full flex flex-col justify-start gap-1">
-      <div className="gap-3 flex min-h-full">
+    <div className="min-h-full h-min flex flex-col gap-5 justify-start">
+      <div className="gap-3 flex h-3/5">
         <Player />
         <TrackList />
       </div>
-      <div>Statistics</div>
+      <AllTracks />
     </div>
   );
 };

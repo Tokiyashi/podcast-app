@@ -2,34 +2,26 @@ import MenuButton from './MenuButton';
 import React from 'react';
 
 const menuItems = {
-  Menu: [
+  ['Меню']: [
     {
-      label: 'Menu',
-      href: '/menu',
-    },
-    {
-      label: 'Listen Together!',
+      label: 'Начать слушать вместе!',
       href: '/room',
     },
   ],
-  Collection: [
+  ['Коллекции']: [
     {
-      label: 'Liked',
-      href: '/liked',
+      label: 'Мои Комнаты',
+      href: '/my-rooms',
     },
     {
-      label: 'TrackList',
+      label: 'Очередь воспроизведения',
       href: '/tracklist',
     },
   ],
-  General: [
+  ['Общее']: [
     {
-      label: 'Settings',
+      label: 'Настройки',
       href: '/settings',
-    },
-    {
-      label: 'Settings',
-      href: '/set',
     },
   ],
 };

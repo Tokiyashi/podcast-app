@@ -8,7 +8,7 @@ type Props = {
 };
 const TrackInfo = ({ currentTrack }: Props) => {
   return (
-    <div className="h-full items-center w-full md:w-1/3 flex gap-2">
+    <div className="h-full items-center w-full flex gap-2">
       <Image
         radius="lg"
         className="h-1/3 hidden md:block md:h-full"

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Track } from '@/common/types/musicItem';
-import MusicList from '@/components/MusicList';
 
 const getTracks = async () => {
   const res = await fetch(
@@ -16,13 +15,13 @@ const getTracks = async () => {
 };
 
 const BrowseMusicPage = async () => {
-  const items: { data: Track[] } = await getTracks();
+  const items: { data: Track[] } = await getTracks()
 
   return (
-    <div className="w-full p-6">
-      <MusicList items={items.data} />
+    <div className='w-full p-6'>
+      {/*<MusicList items={items.data} />*/}
     </div>
-  );
-};
+  )
+}
 
-export default BrowseMusicPage;
+export default BrowseMusicPage
