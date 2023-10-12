@@ -8,7 +8,7 @@ import axios from 'axios';
 import { store } from '@/store';
 import { setRoom } from '@/store/slices/roomSlice';
 import { io } from 'socket.io-client';
-import AllTracks from '@/app/room/[id]/AllTracks';
+import NavigationItems from '@/app/room/[id]/NavigationItems';
 
 const Page = () => {
   const { id } = useParams();
@@ -48,7 +48,7 @@ const Page = () => {
         <Player />
         <TrackList />
       </div>
-      <AllTracks />
+      <NavigationItems />
     </div>
   );
 };

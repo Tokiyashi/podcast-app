@@ -1,9 +1,9 @@
 import { store } from '@/store';
-import { finishCurrentTrack } from '@/store/slices/trackListSlice';
 import { setCurrentTrack } from '@/store/slices/playerSlice';
+import { finishCurrentTrack } from '@/store/slices/roomSlice';
 
 export function goToNextTrack() {
-  const { queue } = store.getState().trackList;
-  store.dispatch(setCurrentTrack(queue[0]));
+  const { trackQueue } = store.getState().room.room;
+  store.dispatch(setCurrentTrack(trackQueue[0]));
   store.dispatch(finishCurrentTrack());
 }
