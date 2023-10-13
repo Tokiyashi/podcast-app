@@ -10,7 +10,6 @@ import { useRouter } from 'next/navigation';
 
 const Page = () => {
   const { room } = useSelector((state: RootState) => state.room);
-  const { currentUser } = useSelector((state: RootState) => state.user);
   const isAdmin = useIsAdmin();
   const router = useRouter();
 
@@ -32,4 +31,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Page

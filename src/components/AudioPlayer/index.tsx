@@ -15,13 +15,6 @@ const AudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   useListenPause(audioRef);
 
-  function handleVolumeChange(volume: number) {
-    if (!audioRef.current) {
-      return;
-    }
-    audioRef.current.volume = volume;
-  }
-
   function handleEnded() {
     if (!audioRef.current) {
       return;

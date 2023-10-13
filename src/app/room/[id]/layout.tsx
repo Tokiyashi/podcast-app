@@ -49,7 +49,7 @@ const Layout = ({ children }: Props) => {
     });
 
     window.addEventListener('beforeunload', ev => {
-      // ev.preventDefault();
+      ev.preventDefault();
       socket.emit('leave room', {
         roomId: id.toString(),
         userId: currentUser._id,
