@@ -3,7 +3,6 @@ import { type Track } from '@/common/types/musicItem';
 import { type RootState, store } from '@/store';
 import { setCurrentTrack } from '@/store/slices/playerSlice';
 import { useSelector } from 'react-redux';
-import MoreOptions from './MoreOptions';
 import PlayPause from '@/components/MusicItem/PlayPause';
 import React from 'react';
 
@@ -41,7 +40,6 @@ const MusicItem = ({ item }: Props) => {
           <span className="text-sm">{item.artist.name}</span>
         </div>
       </div>
-      <MoreOptions item={item} />
     </div>
   );
 };

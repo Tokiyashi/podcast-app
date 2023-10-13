@@ -5,7 +5,6 @@ import { RootState } from '@/store';
 import Controls from './Controls';
 
 const Player = () => {
-  const { room } = useSelector((state: RootState) => state.room);
   const { currentTrack } = useSelector((state: RootState) => state.player);
 
   return (

@@ -20,7 +20,7 @@ const MoreOptions = ({ item }: Props) => {
   const addInQueue = async () => {
     const { room } = store.getState().room;
 
-    await updateRoom({ ...room, trackQueue: [...room?.trackQueue, item] });
+    await updateRoom({ ...room, trackQueue: [...room.trackQueue, item] });
   };
 
   return (
