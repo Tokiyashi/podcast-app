@@ -15,15 +15,17 @@ const Page = () => {
   const router = useRouter();
 
   return (
-    <div className="flex h-full gap-3 flex-col">
+    <div className="flex h-full w-full gap-3 flex-col">
       <div className="flex justify-between items-center">
         <h3 className="text-2xl">Все треки</h3>
         <Button onClick={() => router.back()}>Вернуться Назад</Button>
       </div>
-      <div className="w-full flex-col p-2 bg-card-bg h-1/5 rounded-2xl overflow-auto flex">
-        {room.allTracks.map((item, index) => (
-          <UploadedMusicItem item={item} key={index} />
-        ))}
+      <div className="flex h-full flex-col justify-between">
+        <div className="w-full flex-col p-2 gap-3 h-full rounded-2xl overflow-auto flex">
+          {room.allTracks.map((item, index) => (
+            <UploadedMusicItem item={item} key={index} />
+          ))}
+        </div>
         {isAdmin && <AddNewTrack />}
       </div>
     </div>

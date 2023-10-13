@@ -27,11 +27,11 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <body className={scada.className}>
         <CombinedProvider>
-          <div className="dark h-screen overflow-hidden w-full flex">
+          <div className="dark min-h-screen overflow-hidden w-full flex">
             <Sidebar />
-            <div className="flex w-5/6 max-h-screen overflow-hidden relative flex-col">
+            <div className="flex w-5/6 overflow-auto relative flex-col">
               <Header />
-              <main className="flex w-full flex-col min-h-full overflow-auto h-min p-5">
+              <main className="flex w-full h-full flex-col overflow-auto p-5">
                 {children}
               </main>
             </div>

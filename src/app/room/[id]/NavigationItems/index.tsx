@@ -6,7 +6,7 @@ const NavigationItems = () => {
   const { id } = useParams();
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-2/3">
       <NavItem label="Все треки" href={`./${id}/all-tracks`} />
     </div>
   );

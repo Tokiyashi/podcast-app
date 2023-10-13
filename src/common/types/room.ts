@@ -7,4 +7,5 @@ export type Room = {
   currentTrack: UploadedTrack | null;
   trackQueue: UploadedTrack[];
   creatorId: string;
+  usersOnline: { name: string; id: string }[];
 };
