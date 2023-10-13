@@ -1,10 +1,11 @@
 import { Room } from '@/common/types/room';
 
 export const DEFAULT_ROOM: Room = {
-  id: '',
+  _id: '',
   name: '',
   allTracks: [],
   currentTrack: null,
   trackQueue: [],
   creatorId: '',
+  usersOnline: [],
 };
