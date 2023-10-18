@@ -24,17 +24,25 @@ const Room = () => {
   }
 
   return (
-    <div className="h-full w-full flex justify-center items-start gap-5">
-      <div className="w-2/3 flex items-center justify-center gap-6 p-10">
-        <div className="flex flex-col gap-4 bg-card-bg rounded-2xl p-10">
-          <Image alt="Band" src={theBandParty} className="rounded-2xl" />
+    <div className="h-full w-full flex justify-center items-start">
+      <div className="w-5/6 p-10 flex items-center gap-6">
+        <div className="flex w-1/2 flex-col h-full gap-4 bg-card-bg rounded-2xl p-10">
+          <Image
+            alt="Band"
+            src={theBandParty}
+            className="rounded-2xl flex w-full h-full"
+          />
           <Button className="w-full" onClick={handleCreateRoom}>
             <h2> Создать новую комнату </h2>
           </Button>
         </div>
         или
-        <div className="flex flex-col gap-4 bg-card-bg rounded-2xl p-10">
-          <Image alt="Band" src={theBandMusician} className="rounded-2xl" />
+        <div className="flex flex-col w-1/2 h-full gap-4 bg-card-bg rounded-2xl p-10">
+          <Image
+            alt="Band"
+            src={theBandMusician}
+            className="rounded-2xl flex w-full h-full"
+          />
           <Button className="w-full" onClick={handleCreateRoom}>
             <h2> Присоединиться к существующей комнате </h2>
           </Button>
@@ -44,4 +52,4 @@ const Room = () => {
   );
 };
 
-export default Room
+export default Room;
