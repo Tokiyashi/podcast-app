@@ -1,1 +1,1 @@
-export const backendUrl = 'tune-town-backend.netlify.app:9000';
+export const backendUrl = 'https://music-app-backend-psi.vercel.app';
