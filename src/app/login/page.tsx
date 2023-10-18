@@ -1,5 +1,5 @@
 'use client';
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Input } from '@nextui-org/input';
 import { Button } from '@nextui-org/react';
 import { wrapTextInput } from '@/utils/inputWrappers';
@@ -30,12 +30,6 @@ const Page = () => {
     setCookie('userId', result.data._id);
     router.push('/room');
   }
-
-  useLayoutEffect(() => {
-    if (currentUser._id) {
-      router.push('/room');
-    }
-  }, [currentUser]);
 
   return (
     <div className="h-full flex items-center gap-7 flex-col">

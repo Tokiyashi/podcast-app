@@ -3,7 +3,7 @@ import { Button } from '@nextui-org/react';
 import { backendUrl } from '@/common/constants/url';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import theBandParty from '@/assets/icons/The Band Party.svg';
@@ -48,12 +48,6 @@ const Room = () => {
   //     socket.off('disconnect', onDisconnect)
   //   }
   // }, [socket])
-
-  useLayoutEffect(() => {
-    if (!currentUser._id) {
-      router.push('/login');
-    }
-  }, [currentUser]);
 
   return (
     <div className="h-full w-full flex justify-center items-start gap-5">
