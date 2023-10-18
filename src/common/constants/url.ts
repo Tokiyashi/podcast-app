@@ -1,1 +1,1 @@
-export const backendUrl = 'https://music-app-backend-psi.vercel.app';
+export const backendUrl = process.env.BACKEND_URL;

@@ -30,7 +30,7 @@ const Layout = ({ children }: Props) => {
       return;
     }
 
-    const socket = io(backendUrl);
+    const socket = io(backendUrl + ':9090');
 
     socket.on('connect', () => {
       socket.emit('join room', {
