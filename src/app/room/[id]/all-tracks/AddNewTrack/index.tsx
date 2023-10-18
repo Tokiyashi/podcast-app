@@ -31,7 +31,6 @@ const AddNewTrack = () => {
       allTracks: [
         ...room.allTracks,
         {
-          id: newTrack.data[0].id.toString(),
           url: newTrack.data[0].preview,
           artistName: newTrack.data[0].artist.name,
           title: newTrack.data[0].title,

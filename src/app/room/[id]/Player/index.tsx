@@ -5,7 +5,7 @@ import { RootState } from '@/store';
 import Controls from './Controls';
 
 const Player = () => {
-  const { currentTrack } = useSelector((state: RootState) => state.player);
+  const { currentTrack } = useSelector((state: RootState) => state.room.room);
 
   return (
     <div className="items-center h-full rounded-2xl bg-card-bg flex flex-col justify-center w-2/3">

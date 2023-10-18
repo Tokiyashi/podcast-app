@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { RootState, store } from '@/store';
 import axios from 'axios';
 import { backendUrl, webSocketUrl } from '@/common/constants/url';
-import { setRoom } from '@/store/slices/roomSlice';
+import { getRoom } from '@/store/slices/roomSlice';
 import { io } from 'socket.io-client';
 
 type Props = {
@@ -16,13 +16,13 @@ const Layout = ({ children }: Props) => {
   const { id } = useParams();
   const { currentUser } = useSelector((state: RootState) => state.user);
 
-  async function getRoom(id: string) {
+  async function fetchRoom(id: string) {
     const response = await axios.get(backendUrl + `/rooms/${id}`);
-    store.dispatch(setRoom(response.data));
+    store.dispatch(getRoom(response.data));
   }
 
   useEffect(() => {
-    void getRoom(id.toString());
+    void fetchRoom(id.toString());
   }, [id]);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const Layout = ({ children }: Props) => {
       if (!newValue) {
         return;
       }
-      store.dispatch(setRoom(newValue));
+      store.dispatch(getRoom(newValue));
     });
 
     window.addEventListener('beforeunload', ev => {

@@ -15,7 +15,7 @@ const AudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   useListenPause(audioRef);
 
-  function handleEnded() {
+  async function handleEnded() {
     if (!audioRef.current) {
       return;
     }

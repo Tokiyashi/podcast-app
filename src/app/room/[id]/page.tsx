@@ -12,7 +12,7 @@ const Page = () => {
         <Player />
         <TrackList />
       </div>
-      <div className="flex gap-3 ">
+      <div className="flex h-2/5 gap-3 ">
         <NavigationItems />
         <UserList />
       </div>

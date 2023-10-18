@@ -13,7 +13,7 @@ export type Track = {
 };
 
 export type UploadedTrack = {
-  id: string;
+  _id?: string;
   title: string;
   url: string;
   duration: number;

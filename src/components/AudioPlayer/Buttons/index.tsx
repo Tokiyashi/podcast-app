@@ -38,7 +38,7 @@ const Buttons = ({ audioRef }: Props) => {
     audioRef.current.volume = volume;
   }
 
-  function handleFinishTrack() {
+  async function handleFinishTrack() {
     goToNextTrack();
   }
 

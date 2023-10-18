@@ -3,7 +3,7 @@ import { setCurrentTrack } from '@/store/slices/playerSlice';
 import { finishCurrentTrack } from '@/store/slices/roomSlice';
 
 export function goToNextTrack() {
-  const { trackQueue } = store.getState().room.room;
-  store.dispatch(setCurrentTrack(trackQueue[0]));
+  const room = store.getState().room.room;
+  store.dispatch(setCurrentTrack(room.trackQueue[0]));
   store.dispatch(finishCurrentTrack());
 }

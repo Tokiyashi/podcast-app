@@ -10,7 +10,7 @@ import Link from 'next/link';
 const Controls = () => {
   const { room } = useSelector((state: RootState) => state.room);
 
-  function handleStartRoom() {
+  async function handleStartRoom() {
     store.dispatch(startRoom());
     store.dispatch(setCurrentTrack(store.getState().room.room.allTracks[0]));
   }
