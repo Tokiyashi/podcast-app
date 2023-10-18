@@ -7,7 +7,6 @@ import UploadedMusicItem from '@/components/UploadedMusicItem';
 const TrackList = () => {
   const { room } = useSelector((state: RootState) => state.room);
   const { currentTrack } = useSelector((state: RootState) => state.player);
-  console.log(room);
   return (
     <div className="flex gap-2 h-full justify-start flex-col w-1/3">
       {currentTrack && (

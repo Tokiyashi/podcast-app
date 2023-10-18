@@ -3,7 +3,6 @@ import Player from './Player';
 import TrackList from './TrackList';
 import React from 'react';
 import NavigationItems from '@/app/room/[id]/NavigationItems';
-import UserList from '@/app/room/[id]/UserList';
 
 const Page = () => {
   return (
@@ -14,10 +13,10 @@ const Page = () => {
       </div>
       <div className="flex h-2/5 gap-3 ">
         <NavigationItems />
-        <UserList />
+        {/*<UserList />*/}
       </div>
     </div>
   );
 };
 
-export default Page;
+export default Page

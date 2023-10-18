@@ -37,7 +37,6 @@ const Layout = ({ children }: Props) => {
         userName: currentUser.name,
         userId: currentUser._id,
       });
-      console.log('Подключен к серверу');
     });
 
     socket.on('update room', newValue => {
@@ -47,13 +46,13 @@ const Layout = ({ children }: Props) => {
       store.dispatch(getRoom(newValue));
     });
 
-    window.addEventListener('beforeunload', ev => {
-      ev.preventDefault();
-      socket.emit('leave room', {
-        roomId: id.toString(),
-        userId: currentUser._id,
-      });
-    });
+    // window.addEventListener('beforeunload', ev => {
+    //   ev.preventDefault();
+    //   socket.emit('leave room', {
+    //     roomId: id.toString(),
+    //     userId: currentUser._id,
+    //   });
+    // });
 
     return () => {
       socket.off('connect');

@@ -17,7 +17,6 @@ const Page = () => {
   const router = useRouter();
 
   async function handleSubmit() {
-    console.log(backendUrl);
     const result = await axios.post(backendUrl + '/users/login', {
       email,
       password,
@@ -57,4 +56,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Page

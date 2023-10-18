@@ -24,7 +24,6 @@ const AddNewTrack = () => {
       }
     );
     const newTrack = await res.json();
-    console.log(newTrack.data[0]);
 
     await updateRoom({
       ...room,
@@ -59,4 +58,4 @@ const AddNewTrack = () => {
   );
 };
 
-export default AddNewTrack;
+export default AddNewTrack

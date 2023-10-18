@@ -12,7 +12,6 @@ export const roomMiddleware: Middleware =
     const actionTypes = [setRoom, startRoom, finishCurrentTrack];
     if (actionTypes.map(item => item.type).includes(action.type)) {
       updateRoom(api.getState().room.room);
-      console.log('async call');
     }
 
     return result;
