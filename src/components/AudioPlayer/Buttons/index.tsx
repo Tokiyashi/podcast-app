@@ -83,7 +83,7 @@ const Buttons = ({ audioRef }: Props) => {
         {playerButtons.map(item => (
           <Button
             isIconOnly
-            key={item.icon}
+            key={item.icon.toString()}
             className="p-1 h-full w-1/4 "
             radius="full"
             variant="light"
