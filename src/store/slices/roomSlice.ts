@@ -38,11 +38,17 @@ export const roomSlice = createSlice({
       state.room.currentTrack = action.payload;
     },
     finishCurrentTrack: state => {
+      state.room.currentTrack = state.room.trackQueue[0];
       state.room.trackQueue.shift();
     },
   },
 });
 
-export const { setRoom, getRoom, startRoom, finishCurrentTrack } =
-  roomSlice.actions;
+export const {
+  setRoom,
+  getRoom,
+  setCurrentTrack,
+  startRoom,
+  finishCurrentTrack,
+} = roomSlice.actions;
 export default roomSlice.reducer;

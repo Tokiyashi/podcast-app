@@ -6,13 +6,12 @@ import UploadedMusicItem from '@/components/UploadedMusicItem';
 
 const TrackList = () => {
   const { room } = useSelector((state: RootState) => state.room);
-  const { currentTrack } = useSelector((state: RootState) => state.player);
   return (
     <div className="flex gap-2 h-full justify-start flex-col w-1/3">
-      {currentTrack && (
+      {room.currentTrack && (
         <>
           <span>Сейчас играет:</span>
-          <UploadedMusicItem item={currentTrack} />
+          <UploadedMusicItem item={room.currentTrack} />
         </>
       )}
       <span>Очередь воспроизведения</span>
