@@ -23,6 +23,7 @@ const Room = () => {
     router.push(`/room/${_id}`);
   }
 
+  console.log(backendUrl, 'backend');
   return (
     <div className="h-full w-full flex justify-center items-start">
       <div className="w-5/6 p-10 flex items-center gap-6">
