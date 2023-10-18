@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { UploadedTrack } from '@/common/types/musicItem';
 import PlayPause from '@/components/MusicItem/PlayPause';
