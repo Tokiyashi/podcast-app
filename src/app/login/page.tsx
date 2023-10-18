@@ -5,18 +5,16 @@ import { Button } from '@nextui-org/react';
 import { wrapTextInput } from '@/utils/inputWrappers';
 import axios from 'axios';
 import { backendUrl } from '@/common/constants/url';
-import { RootState, store } from '@/store';
+import { store } from '@/store';
 import { setUser } from '@/store/slices/userSlice';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useSelector } from 'react-redux';
 import { setCookie } from 'cookies-next';
 
 const Page = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
-  const { currentUser } = useSelector((state: RootState) => state.user);
 
   async function handleSubmit() {
     const result = await axios.post(backendUrl + '/users/login', {
@@ -58,4 +56,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Page
