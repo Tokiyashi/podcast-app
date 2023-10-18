@@ -23,32 +23,6 @@ const Room = () => {
     router.push(`/room/${_id}`);
   }
 
-  // const test = () => {
-  //   console.log('123')
-  //   socket.emit('message', {
-  //     text: '123123',
-  //     name: 'name',
-  //   })
-  // }
-  //
-  // useEffect(() => {
-  //   function onConnect() {
-  //     setIsConnected(true)
-  //   }
-  //
-  //   function onDisconnect() {
-  //     setIsConnected(false)
-  //   }
-  //
-  //   socket.on('connect', onConnect)
-  //   socket.on('disconnect', onDisconnect)
-  //
-  //   return () => {
-  //     socket.off('connect', onConnect)
-  //     socket.off('disconnect', onDisconnect)
-  //   }
-  // }, [socket])
-
   return (
     <div className="h-full w-full flex justify-center items-start gap-5">
       <div className="w-2/3 flex items-center justify-center gap-6 p-10">
@@ -70,4 +44,4 @@ const Room = () => {
   );
 };
 
-export default Room;
+export default Room
