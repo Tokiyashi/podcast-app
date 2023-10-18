@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import { useSelector } from 'react-redux';
 import { RootState, store } from '@/store';
 import axios from 'axios';
-import { backendUrl } from '@/common/constants/url';
+import { backendUrl, webSocketUrl } from '@/common/constants/url';
 import { setRoom } from '@/store/slices/roomSlice';
 import { io } from 'socket.io-client';
 
@@ -30,8 +30,7 @@ const Layout = ({ children }: Props) => {
       return;
     }
 
-    const socket = io(backendUrl + ':9090');
-
+    const socket = io(webSocketUrl);
     socket.on('connect', () => {
       socket.emit('join room', {
         roomId: id.toString(),
