@@ -32,7 +32,7 @@ const UploadedMusicItem = ({ item }: Props) => {
             isPausedTrack={isPausedTrack}
             onPause={pause}
             onPlay={play}
-            currentlyOpened={currentTrack?.id === item.id}
+            currentlyOpened={currentTrack?._id === item._id}
           />
         )}
         <div className="flex flex-col overflow-hidden">
