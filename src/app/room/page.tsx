@@ -26,7 +26,7 @@ const Room = () => {
   console.log(backendUrl, 'backend');
   return (
     <div className="h-full w-full flex justify-center items-start">
-      <div className="w-5/6 p-10 flex items-center gap-6">
+      <div className="w-5/6 p-10 md:flex-row flex-col flex items-center gap-6">
         <div className="flex w-1/2 flex-col h-full gap-4 bg-card-bg rounded-2xl p-10">
           <Image
             alt="Band"
